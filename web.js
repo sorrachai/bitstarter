@@ -5,7 +5,7 @@ var filename = __dirname + '/index.html';
 
 app.get('/', function(request, response) {
  var buffer = new Buffer(1000);
- var str = fs.readFileSync(filename);
+ var str = fs.readFileSync(filename,'utf8');
  buffer.write(str);   
 response.send(buffer.toString('utf-8'));
 });
